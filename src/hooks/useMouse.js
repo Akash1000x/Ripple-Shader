@@ -1,12 +1,13 @@
 import * as React from "react";
 export default function useMouse() {
-  const [mouse, setMouse] = React.useState({ x: 0, y: 0 });
+  const [mouse, setMouse] = React.useState({ x: 0, y: 0, pixelRatio: 0 });
 
   const mouseMove = (e) => {
     const { clientX, clientY } = e;
     setMouse({
       x: clientX,
       y: clientY,
+      pixelRatio: Math.min(window.devicePixelRatio, 2),
     });
   };
 
