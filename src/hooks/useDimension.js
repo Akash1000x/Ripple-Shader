@@ -18,13 +18,10 @@ export default function useDimension() {
         });
       };
 
-      // Initial call to set the dimensions
       resize();
 
-      // Add event listener for window resize
       window.addEventListener("resize", resize);
 
-      // Cleanup event listener on component unmount
       return () => window.removeEventListener("resize", resize);
     }
   }, []);

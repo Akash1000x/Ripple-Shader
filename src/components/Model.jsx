@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
-import { Image, useFBO, useTexture } from "@react-three/drei";
+import { useFBO, useTexture } from "@react-three/drei";
 import * as THREE from "three";
 import useMouse from "@/hooks/useMouse";
 import useDimension from "@/hooks/useDimension";
@@ -9,7 +9,6 @@ import { fragment } from "@/shaders/fragment";
 
 export default function Model() {
   const { viewport } = useThree();
-  const imageTexture = useTexture("/images/picture1.jpeg");
   const texture = useTexture("/images/brush.png");
   const meshRefs = useRef([]);
   const [meshes, setMeshes] = useState([]);
